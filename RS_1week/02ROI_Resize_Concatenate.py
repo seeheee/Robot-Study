@@ -51,16 +51,16 @@ print("----------------------------------------")
 # img는 512x512
 # img_4color는 100x100
 #
-result = np.zeros(img.shape, np.uint8)
-for y in range(img.shape[0]):
-    for x in range(img.shape[1]):
-        if 0 <= x < 100 and 0 <= y < 100:
-            result[y][x] = img_4color[y][x]
-        else:
-            result[y][x] = img[y][x]
-
-
-cv.imshow("result", result)
+# result = np.zeros(img.shape, np.uint8)
+# for y in range(img.shape[0]):
+#     for x in range(img.shape[1]):
+#         if 0 <= x < 100 and 0 <= y < 100:
+#             result[y][x] = img_4color[y][x]
+#         else:
+#             result[y][x] = img[y][x]
+#
+#
+# cv.imshow("result", result)
 
 
 cv.waitKey()

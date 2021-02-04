@@ -20,7 +20,7 @@ print("----------------------------------------")
 # 3채널 컬러 이미지는 픽셀값이 각 채널의 색상 값을 나타냄
 # modulo 연산 / numpy 연산
 
-bright = np.zeros(gray1.shape)      # gray 이미지 틀에 0으로 초기화된 2중 리스트
+# bright = np.zeros(gray1.shape, dtype=np.uint8)      # gray 이미지 틀에 0으로 초기화된 2중 리스트
 # for y in range(gray1.shape[0]):
 #     for x in range(gray1.shape[1]):
 #         if gray1[y][x] + 50 > 255:
@@ -29,32 +29,32 @@ bright = np.zeros(gray1.shape)      # gray 이미지 틀에 0으로 초기화된
 #             bright[y][x] = gray1[y][x] + 50
 #
 #
-dark = np.zeros(gray1.shape)
+# dark = np.zeros(gray1.shape, dtype=np.uint8)
 # for y in range(gray1.shape[0]):
 #     for x in range(gray1.shape[1]):
 #         if gray1[y][x] - 50 < 0:
 #             dark[y][x] = 0
 #         else:
 #             dark[y][x] = gray1[y][x] - 50
-
-
-print("*************** gray ***************\n원소 데이터 타입:", type(gray1[0][0]), "\n", gray1)
-print("\n************** bright **************\n원소 데이터 타입:", type(bright[0][0]), "\n", bright)
-print("\n*************** dark ***************\n원소 데이터 타입:", type(dark[0][0]), "\n", dark)
+#
+#
+# print("*************** gray ***************\n원소 데이터 타입:", type(gray1[0][0]), "\n", gray1)
+# print("\n************** bright **************\n원소 데이터 타입:", type(bright[0][0]), "\n", bright)
+# print("\n*************** dark ***************\n원소 데이터 타입:", type(dark[0][0]), "\n", dark)
 
 
 # ==================== 밝기 조절2 (이미지 단위) ====================
 # saturation 연산 / openCV 사용
 
 # 이 모듈 사용하면 조건문을 따로 넣어서 돌려줄 필요없음
+# #
+# bright = cv.add(gray1, 50)
+# dark = cv.add(gray1, -50)
 #
-# bright = cv.add(gray1, 100)
-# dark = cv.add(gray1, -100)
-
 #
 # cv.imshow('gray', gray1)
-# cv.imshow('bright', bright)
-# cv.imshow('dark', dark)
+# cv.imshow('bright', bright/255)
+# cv.imshow('dark', dark/255)
 
 
 
@@ -63,16 +63,16 @@ print("\n*************** dark ***************\n원소 데이터 타입:", type(d
 # 1. gray = (R + G + B) / 3
 # 2. gray = R * 0.2126 + G * 0.7152 + B * 0.0722
 # opencv는 B,G,R 순서임
-
-gray2 = (img[:, :, 2] / 3) + (img[:, :, 1] / 3) + (img[:, :, 0] / 3)
-gray3 = img[:, :, 2] * 0.2126 + img[:, :, 1] * 0.7152 + img[:, :, 0] * 0.0722
-
-cv.imshow("color", img)
-cv.imshow("gray2", gray2 / 255)
-cv.imshow("gray3", gray3 / 255)
-
-# # #OpenCV 함수 사용
-gray4 = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
-cv.imshow("gray4", gray4)
+#
+# gray2 = (img[:, :, 2] / 3) + (img[:, :, 1] / 3) + (img[:, :, 0] / 3)
+# gray3 = img[:, :, 2] * 0.2126 + img[:, :, 1] * 0.7152 + img[:, :, 0] * 0.0722
+#
+# cv.imshow("color", img)
+# cv.imshow("gray2", gray2 / 255)
+# cv.imshow("gray3", gray3 / 255)
+#
+# # # #OpenCV 함수 사용
+# gray4 = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+# cv.imshow("gray4", gray4)
 
 cv.waitKey()
