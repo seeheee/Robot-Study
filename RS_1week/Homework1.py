@@ -8,12 +8,15 @@ def mouse_callback(event, x, y, flags, param):
 
 
 Path = 'Data/'
-Name = 'rabong2.jpg'
+Name = 'rabong.jpg'
 FullName = Path + Name
 
 # 이미지 읽기
 img = cv.imread(FullName)
+
+# 이미지 복사(원본이미지도 띄우고 싶어서..)
 img_copy = img.copy()
+
 # 가로축 그리기
 cv.line(img_copy, (0, 256), (512, 256), (255, 0, 0), 3)
 # 세로축 그리기
@@ -35,7 +38,7 @@ for y in range(512):
             cnt += 1
 # print("x의 총합", "y의 총합", "count", sum_x,sum_y,cnt)
 
-# x와 y좌표의 평균값을 구하면 한라봉이 몇 사분면에 존재하는지 알 수 있음
+# 어차피 사분면에 모여있을테니까는 x와 y좌표의 평균값을 구하면 한라봉이 몇 사분면에 존재하는지 알 수 있음
 avg_X = sum_x / cnt
 avg_y = sum_y / cnt
 
