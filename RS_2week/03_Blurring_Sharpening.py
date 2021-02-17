@@ -24,7 +24,7 @@ cv.imshow('Original', img)
 
 # ==================== 평균값 필터 ====================
 # **** 실습 3) 직접 평균값 필터를 만들어 제공된 영상에 컨볼루션 연산 적용하기 ****
-# blurfilter = np.array([[1/9,1/9,1/9]*3])
+# blurfilter = np.array([[1/25, 1/25, 1/25, 1/25, 1/25] *5])
 #
 # blurimg = cv.filter2D(img, -1, blurfilter)
 # cv.imshow('blurimg', blurimg)
@@ -49,15 +49,17 @@ cv.imshow('Original', img)
 
 # ==================== 가우시안 필터 ====================
 # **** 실습 4) 직접 가우시안 필터를 만들어 제공된 영상에 컨볼루션 연산 적용하기 ****
-# 3*3
-# gauss_filter = np.array([[1/16, 1/8, 1/16],[1/8, 1/4, 1/8], [1/16, 1/8, 1/16]])
-
-# 5*5
-# gauss_filter = np.array([[1/256, 1/64, 1/46, 1/64, 1/256],[1/64, 1/16, 24/256, 16/256, 4/256], [6/256, 24/256, 36/256, 24/256, 6/256], ])
-# gauss_img = cv.filter2D(img, -1, gauss_filter)
+# # 3*3
+# gauss_filter_3 = np.array([[1, 2, 1], [2, 4, 2], [1, 2, 1]]) * 1/16
+# #
+# # # 5*5
+# gauss_filter_5 = np.array([[1, 4, 6, 4, 1], [4, 16, 24, 16, 4], [6, 24, 36, 24, 6], [4,16,24,16,4], [1,4,6,4,1]]) * 1/256
+# #
+# gauss_img_3 = cv.filter2D(img, -1, gauss_filter_3)
+# gauss_img_5 = cv.filter2D(img, -1, gauss_filter_5)
 #
-# cv.imshow('gauss_img', gauss_img)
-#
+# cv.imshow('gauss_img_3', gauss_img_3)
+# cv.imshow('gauss_img_5', gauss_img_5)
 # cv.waitKey()
 # exit()
 # ==================================================
@@ -96,9 +98,9 @@ cv.imshow('Original', img)
 
 # ==================== 샤프닝 ====================
 # **** 실습 5) 직접 샤프닝 필터를 만들어 제공된 영상에 컨볼루션 연산 적용하기 ****
-sharpfilter = np.array([[0,-1,0],[-1,5,-1],[0,-1,0]])
-sharpfilter2 = np.array([[0,-2,0],[-2,9,-2],[0,-2,0]])
-sharpfilter3 = np.array([[-1,-1,-1],[-1,9,-1],[-1,-1,-1]])
+sharpfilter = np.array([[0, -1, 0], [-1, 5, -1], [0, -1, 0]])
+sharpfilter2 = np.array([[0, -2, 0], [-2, 9, -2], [0, -2, 0]])
+sharpfilter3 = np.array([[-1, -1, -1], [-1, 9, -1], [-1, -1, -1]])
 
 sharp_img = cv.filter2D(img, -1, sharpfilter)
 sharp_img2 = cv.filter2D(img, -1, sharpfilter2)

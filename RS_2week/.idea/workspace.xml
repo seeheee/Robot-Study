@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63ff3110-a991-4e27-8014-d2a5d2dc1ef4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/homework_week2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Binarization.py" beforeDir="false" afterPath="$PROJECT_DIR$/02_Binarization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_Blurring_Sharpening.py" beforeDir="false" afterPath="$PROJECT_DIR$/03_Blurring_Sharpening.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +47,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.homework_week2">
+  <component name="RunManager" selected="Python.03_Blurring_Sharpening">
     <configuration name="01_PixelPointProcessing (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="sources" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -155,10 +155,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.homework_week2" />
         <item itemvalue="Python.03_Blurring_Sharpening" />
         <item itemvalue="Python.02_Binarization" />
         <item itemvalue="Python.01_PixelPointProcessing (1)" />
+        <item itemvalue="Python.homework_week2" />
         <item itemvalue="Python.03_Binarization" />
       </list>
     </recent_temporary>
@@ -181,7 +181,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

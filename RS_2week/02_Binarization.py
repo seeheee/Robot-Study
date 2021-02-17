@@ -48,12 +48,12 @@ cv.imshow('Original Image', img)
 #   type : 임계값 적용 방법
 #     cv2.THRESH_BINARY : 픽셀 값이 thresh보다 크면 maxval, 작으면 0으로 할당
 # ==================================================
-bin_img = img.copy()
-
-_, bin_img = cv.threshold(bin_img, 100, 255, cv.THRESH_BINARY)
-
-cv.imshow('binarization 3', bin_img)
-cv.waitKey()
+# bin_img = img.copy()
+#
+# _, bin_img = cv.threshold(bin_img, 127, 255, cv.THRESH_BINARY)
+#
+# cv.imshow('binarization 3', bin_img)
+# cv.waitKey()
 # ==================================================
 
 
