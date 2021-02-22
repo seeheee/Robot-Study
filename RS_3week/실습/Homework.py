@@ -4,10 +4,13 @@ import numpy as np
 img = cv.imread('homework.jpg')     # image size : (429, 697)
 
 # 1. 주어진 이미지를 Gray Scale로 변환
+gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 
 # 2. 이미지 Blurring 처리
+blur = cv.GaussianBlur(gray, (7, 7), 2)
 
 # 3. Canny Edge로 Edge만 검출
+canny = cv.Canny(blur, 30, 70)
 
 # 4. ROI로 차선 부분만 추출
 ## 직사각형이 아닌 사다리꼴 등의 모양으로 ROI 할 때 사용 ##
@@ -24,5 +27,12 @@ def region_of_interest(img, vertices, color3=(255, 255, 255), color1=255):  # RO
     return ROI_image
 
 # vertices point 설정 - np.array([[왼쪽 위], [오른쪽 위], [오른쪽 아래], [왼쪽 아래]])
-point = np.array([[,], [,], [,], [,]])
-roi = region_of_interest(img, [point])
+point = np.array([[10,315], [790,240], [790,680], [0,680]])
+roi = region_of_interest(canny, [point])
+
+cv.imshow("original", img)
+cv.imshow("gray", gray)
+cv.imshow("blur", blur)
+cv.imshow("canny", canny)
+cv.imshow("final", roi)
+cv.waitKey(0)

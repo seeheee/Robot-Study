@@ -35,21 +35,21 @@ img = cv.imread(FullName)
 
 
 # ********* 네 개의 Sobel Filter를 사용하여 모든 방향 Edge 검출하기 ***********
-# kernel1 = np.array([[-1,0,1],[-2,0,2],[-1,0,1]])
-# dst1 = cv.filter2D(img, -1, kernel1)
-#
-# kernel2 = np.array([[1,2,1],[0,0,0],[-1,-2,-1]])
-# dst2 = cv.filter2D(img, -1, kernel2)
-#
-# kernel3 = np.array([[-2,-1,0],[-1,0,1],[0,1,2]])
-# dst3 = cv.filter2D(img, -1, kernel3)
-#
-# kernel4 = np.array([[0,1,2],[-1,0,1],[-2,-1,0]])
-# dst4 = cv.filter2D(img, -1, kernel4)
-#
-# cv.imshow('sumsum', dst1 + dst2 + dst3 + dst4)
-#
-#
-# cv.imshow('Original', img)
-# cv.waitKey(0)
-# cv.destroyAllWindows()
+kernel1 = np.array([[-1,0,1],[-2,0,2],[-1,0,1]])
+dst1 = cv.filter2D(img, -1, kernel1)
+
+kernel2 = np.array([[1,2,1],[0,0,0],[-1,-2,-1]])
+dst2 = cv.filter2D(img, -1, kernel2)
+
+kernel3 = np.array([[-1,-2,-1],[0,0,0],[1,2,1]])
+dst3 = cv.filter2D(img, -1, kernel3)
+
+kernel4 = np.array([[-1,0,1],[-2,0,2],[-1,0,1]])
+dst4 = cv.filter2D(img, -1, kernel4)
+
+cv.imshow('sumsum', dst1 + dst2 + dst3 + dst4)
+
+
+cv.imshow('Original', img)
+cv.waitKey(0)
+cv.destroyAllWindows()
