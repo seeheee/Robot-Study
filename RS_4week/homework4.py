@@ -18,18 +18,19 @@ while cap.isOpened():
         break
 
     Nframe += 1
-    origin = np.copy(frame)
+    origin = np.copy(frame) #동영상 파일 카피
 
-    gray = cv.cvtColor(origin, cv.COLOR_BGR2GRAY)
+    gray = cv.cvtColor(origin, cv.COLOR_BGR2GRAY) #회색으로 이미지 만들기
 
-    blur = cv.GaussianBlur(gray, (11, 11), 2)
+    blur = cv.GaussianBlur(gray, (11, 11), 2) #가우시안 필터 사용하여 블러링 처리
 
-    canny = cv.Canny(blur, 30, 70)
+    canny = cv.Canny(blur, 30, 70) #canny엣지필터사용하여 엣지검출
 
 
     # cv.imshow('canny', canny)
     #   # 원본영상
 
+    # 다각형으로 차선만을 검출 ROI 설정
     def region_of_interest(origin, verticles, color3=(255,255,255), color1=255):
         mask = np.zeros_like(origin)
         if len(origin.shape) > 2:
@@ -47,7 +48,10 @@ while cap.isOpened():
 
     cv.imshow('roi', roi)
 
+    # cv2.HoughLines(image, rho, theta, threshold)
+    # 허프변환 이용하기
     lines = cv.HoughLines(roi, 1, np.pi / 180, 150)
+
     for line in lines:
         rho, theta = line[0]
         a = np.cos(theta)
