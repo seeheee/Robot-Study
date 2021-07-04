@@ -22,3 +22,8 @@ https://development-sehee.tistory.com/19
 
 ### 5️⃣ 영상처리 기본 - 동영상에서 차선 검출하기
 RS_4week 파일 내용(위에 배운 내용들을 한번에 사용하기)
+![image](https://user-images.githubusercontent.com/53335160/124380347-23c3cf00-dcf7-11eb-9e06-f287f05ee7cb.png)
+
+
+
+
